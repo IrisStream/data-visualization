@@ -15,13 +15,15 @@ class CovidSpider(scrapy.Spider):
             totalDeath = row.xpath(".//td[5]/text()").get()
             newDeath = row.xpath(".//td[6]/text()").get()
             totalRecovered = row.xpath(".//td[7]/text()").get()
-            activeCase = row.xpath(".//td[8]/text()").get()
-            seriousCritical = row.xpath(".//td[9]/text()").get()
-            TotalCasePer1MPop = row.xpath(".//td[10]/text()").get()
-            TotalDeathsPer1MPop = row.xpath(".//td[11]/text()").get()
-            TotalTests = row.xpath(".//td[12]/text()").get()
-            TotalTestsPer1MPop = row.xpath(".//td[13]/text()").get()
-            population = row.xpath(".//td[14]/text()").get()
+            activeCase = row.xpath(".//td[9]/text()").get()
+            seriousCritical = row.xpath(".//td[10]/text()").get()
+            TotalCasePer1MPop = row.xpath(".//td[11]/text()").get()
+            TotalDeathsPer1MPop = row.xpath(".//td[12]/text()").get()
+            TotalTests = row.xpath(".//td[13]/text()").get()
+            TotalTestsPer1MPop = row.xpath(".//td[14]/text()").get()
+            population = row.xpath(".//td[15]/a/text()").get()
+            if population is None:
+                population = row.xpath(".//td[15]/text()").get()
 
             yield {
                 "CountryName": country,
