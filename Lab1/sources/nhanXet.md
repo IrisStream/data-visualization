@@ -64,10 +64,10 @@
 ## Nhận xét dữ liệu 
 
 - Nhận xét dữ liệu **Line chart**
-    - Tiến hành hồi quy 3 biến cho lần lượt các trường dữ liệu trong tập dữ liệu, ta thu được kết quả phân tích thống kê như sau (lấy những bộ có `Adj R^2` > 0.7). Các bộ 3 biến này có quan hệ với mức....
+    - Tiến hành hồi quy 3 biến cho lần lượt các trường dữ liệu trong tập dữ liệu, ta thu được kết quả phân tích thống kê như sau (lấy những bộ có `Adj R^2` > 0.7). Các bộ 3 biến này tồn tại quan hệ với mức tin cậy trên 70%.
 
     | STT | Var1 (độc lập) | Var2 (độc lập) | Var3 (phụ thuộc) | Adj R^2 |
-    |-----|----------------|----------------|------------------|---------|
+    |:-----:|----------------|----------------|------------------|:---------:|
     | 1   | Total Case     | Total Deaths   | Total Recovered  | 0.977   |
     | 2   | Total Case     | Total Deaths   | Active Cases     | 0.719   |
     | 3   | Total Case     | Total Deaths   | Total Tests      | 0.800   |
@@ -79,10 +79,10 @@
     | 8   | Total Recovered| Active Cases   | Total Tests      | 0.772   |
     | 10  | Total Recovered| Critical Cases | Total Tests      | 0.754   |
 
-    - Tiến hành hồi quy 4 biến cho lần lượt các trường dữ liệu trong tập dữ liệu, ta thu được kết quả phân tích thống kê như sau (lấy những bộ có `Adj R^2` > 0.7). Các bộ 3 biến này có quan hệ với mức....
+    - Tiến hành hồi quy 4 biến cho lần lượt các trường dữ liệu trong tập dữ liệu, ta thu được kết quả phân tích thống kê như sau (lấy những bộ có `Adj R^2` > 0.7). Các bộ 4 biến này tồn tại quan hệ với mức tin cậy trên 70%.
 
     | STT | Var1 (độc lập) | Var2 (độc lập) | Var3 (độc lập) | Var4 (phụ thuộc) | Adj R^2 |
-    |-----|----------------|----------------|----------------|------------------|---------|
+    |:-----:|----------------|----------------|----------------|------------------|:---------:|
     | 1   | Total Case     | Total Deaths   | Total Recovered| Active Cases     | 0.967   |
     | 2   | Total Case     | Total Deaths   | Total Recovered| Total Tests      | 0.800   |
     | 3   | Total Case     | Total Deaths   | Active Cases   | Total Tests      | 0.800   |
