@@ -1,5 +1,5 @@
 {
-  "long": {
+  "lat": {
     "Afghanistan": 33,
     "Akrotiri": 34.37,
     "Albania": 41,
@@ -261,7 +261,7 @@
     "Zambia": -15,
     "Zimbabwe": -20
   },
-  "lat": {
+  "long": {
     "Afghanistan": 65,
     "Akrotiri": 32.58,
     "Albania": 20,
