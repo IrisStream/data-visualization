@@ -157,7 +157,7 @@
         - Biến `Total Tests` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (40.36% < 75%)
 
 
-- Nhận xét dữ liệu **World Map** (Sơn)
+- Nhận xét dữ liệu **World Map** (Sơn)  
 
     - **(Total Case, Total Deaths)**
         - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9052). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
