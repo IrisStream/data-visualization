@@ -31,6 +31,9 @@
 - Lý do sử dụng **Stacked Bar Chart** (MP)
     - write something here
 
+- Lý do sử dụng **World Map**
+    - Sử dụng **World Map** cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt, khác biệt như thế nào giữa các quốc gia. Từ đó dễ dàng xác định được khu vực, quốc gia nào là tâm điểm (dữ liệu lớn nhất) và dự đoán được sự thay đổi của dữ liệu trong tương lai.
+
 ## Nhận xét dữ liệu 
 
 - Nhận xét dữ liệu **Line chart**
@@ -69,6 +72,7 @@
     - write something here
 
 - Nhận xét dữ liệu **Scatter plot** (Tú)
+
 **(Total Case, Total Deaths)**
     - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 3.27e-113)
     - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 3.27e-113)
@@ -151,3 +155,21 @@
 
 **(Total Tests, Population)**
     - Biến `Total Tests` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (40.36% < 75%)
+
+
+- Nhận xét dữ liệu **World Map** (Sơn)
+
+**(Total Case, Total Deaths)**
+    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9052). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+
+**(Total Case, Total Recovered)**
+    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9773). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+
+**(Total Case, Total Tests)**
+    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7721). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+
+**(Total Deaths, Total Recovered)**
+    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.8908). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+    
+**(Total Tests, Total Recovered)**
+    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7531). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
