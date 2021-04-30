@@ -4,4 +4,3 @@ Total Recovered
 Active Cases
 Critical Cases
 Total Tests
-Population
