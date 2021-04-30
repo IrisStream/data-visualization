@@ -5,36 +5,6 @@
 ## Giải thích biểu đồ
 
 - Lý do sử dụng **Line Chart** trong biểu diễn mối quan hệ giữa 3 biến dữ liệu và 4 biến dữ liệu
-    ```python
-    # visualize the first 10 countries
-    # relationships: list of tuple. ex: [(Total Case, Total Deaths, Total Recovered), ...]
-    def visualizeRelationships(relationships):
-        fig, axs = plt.subplots(2,5, figsize=(30,15))
-        fig.tight_layout(pad=7.5)
-        
-        countries = df['CountryName'][:10]
-        for i in range(2):
-            for j in range(5):
-                X = []
-                for k in range(len(relationships[0])-1):
-                    X.append(df[relationships[5*i+j][k]].values)
-                    axs[i,j].plot(countries, X[k][:10], '-o', label=relationships[5*i+j][k])
-                X = np.array(X)
-                Y = df[relationships[5*i+j][-1]].values
-                axs[i,j].plot(countries, Y[:10], '--o', label=relationships[5*i+j][-1]+' (phụ thuộc)')
-
-                w,_ = linear_regression(X,Y)
-                axs[i,j].set_xlabel('Country')
-                axs[i,j].set_ylabel('Case')
-                axs[i,j].legend()
-                axs[i,j].set_title(f'{relationships[5*i+j]}\nW = {np.round(w,1)}')
-                axs[i,j].set_xticklabels(countries, rotation=90)
-
-        plt.show()
-
-    visualizeRelationships(regression3Variables)
-    visualizeRelationships(regression4Variables)
-    ```
 
     - Sau khi tìm ta được quan hệ tuyến tính giữa 3 biến dữ liệu (bao gồm 2 biến độc lập và 1 biến phụ thuộc) và 4 biến dữ liệu (bao gồm 3 biến độc lập và 1 biến phụ thuộc), việc trực quan dữ liệu được dựa trên cơ sở toán học như sau:
         - Giả sử ta tìm được hàm hồi quy giữa 3 biến như sau: 
