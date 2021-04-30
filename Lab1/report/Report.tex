@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{listings}
 % \usepackage{rotating}
 % \usepackage{tikz}
 
@@ -106,16 +107,71 @@
 
     \begin{itemize}
         \item Nguồn dữ liệu: \url{https://www.worldometers.info/coronavirus/}
+        \item Viết chương trình thu thập dữ liệu
+        \begin{itemize}
+            \item Ngôn ngữ: Python
+            \item Framework: Scrapy - framework của python cho phép ta có thể cạo dữ liệu từ web site bằng các lớp đã được định nghĩa sẵn. Scrapy có 5 thành phần:
+            \begin{enumerate}
+                \item Spiders: Spiders là lớp đươc định nghĩa sẵn giúp ta có thể lấy dữ liệu liệu dự trên cấu trúc của website.
+                Pipelines: Xử lý các thao tác tiền xử lý dữ liệu như: Làm sạch dữ liệu, xóa các phần tử trùng lặp.
+                Middlewares: Xử lý các request gửi đến website và các response mà ta nhận lại được.
+                Engine: Chịu trách nhiệm điều phối hoạt động của các thành phần khác.
+                Sheduler: Chịu trách nhiệm duy trì thứ tự thực hiện của các công việc
+            \end{enumerate}
+
+            \item Các bước thực hiện
+            \begin{enumerate}
+                \item Cài đặt Scrapy
+                \begin{verbatim}
+    pip install Scrapy
+                \end{verbatim}
+
+                \item Tạo Scrapy project
+                \begin{verbatim}
+    scrapy startproject corona
+                \end{verbatim}
+
+                \item Tạo spider trong Scrapy
+                \begin{verbatim}
+    cd corona
+    scrapy genspider covid www.worldometers.info/coronavirus
+                \end{verbatim}
+
+                \item Lấy dữ liệu từ xpath của trang HTML sau đó lưu vào Dataframe (Pandas). Cuối cùng, xuất dataframe ra file *.csv. Chi tiết cài đặt xem tại folder \textbf{crawler}.
+                \item Lặp lại quá trình lấy dữ liệu theo ngày bằng đoạn script sau:
+                \begin{verbatim}
+    cd corona
+    now=$(date +%d-%m)
+    scrapy crawl covid -o ../../data/"$now".csv
+    cd ..
+                \end{verbatim}
+            \end{enumerate}
+        \end{itemize}
     \end{itemize}
 
     \subsection{Tiền xử lý}
 
     \begin{itemize}
-        \item Vấn đề dữ liệu gặp phải:
-        \item Hướng tiền xử lý:
+        \item Dữ liệu dạng số sau khi lấy về có chứa dấu "," (ví dụ: 12,000) khiến cho máy tính "hiểu nhầm" là kiểu chuỗi.\\
+        $\rightarrow$ Xoá dấu "," và các khoảng trắng dư thừa trong dữ liệu\\
+        $\rightarrow$ Chuyển dữ liệu về dạng số
+        $\rightarrow$ Điền giá trị 0 vào các ô dữ liệu trống
+
+        \item Sau khi thực hiện xong các bước trên, xuất dữ liệu "sạch" ra một file *.csv mới.
+        \item Chi tiết xem tại file \textbf{preprocess.py}
     \end{itemize}
 
     \subsection{Khám phá dữ liệu}
+
+    \begin{itemize}
+        \item Total Cases: Tổng số các ca nhiễm (gồm các ca nhiễm hiện có, đã tử vong, đã hồi phục).
+        \item Total Deaths: Tổng số các ca nhiễm đã tử vong.
+        \item Total Recovered: Tổng số các ca nhiễm đã hồi phục.
+        \item Active Cases: Các ca nhiễm đang được điều trị.
+        \item Total Tests: Tổng số lần xét nghiệm được thực hiện.
+        \item Population: Dân số của một quốc gia.
+    \end{itemize}
+
     \clearpage 
 
     \section{Trực quan hoá mối quan hệ giữa các trường dữ liệu}
@@ -124,8 +180,10 @@
 
     \begin{itemize}
         \item Với mỗi biến X, Y của tập dữ liệu, ta tính hệ số tương quan 
-        $$\rho(X, Y) = \frac{Cov(X, Y)}{\sqrt{Var(X)\times Var(Y)}} = \frac{Cov(X, Y)}{\sigma(X)\times \sigma(Y)}$$
-        Với $Cov(X,Y) = E[XY] - E[X]E[Y]$
+        \begin{equation}
+            \rho(X, Y) = \frac{Cov(X, Y)}{\sqrt{Var(X)\times Var(Y)}} = \frac{Cov(X, Y)}{\sigma(X)\times \sigma(Y)}
+        \end{equation}
+        Với $Cov(X,Y) = E[XY] - E[X]E[Y]$ là hiệp phương sai của 2 biến X, Y.
 
         \item Từ đó, tính được ma trận hệ số tương quan giữa các cặp biến X, Y trong tập dữ liệu. Biểu diễn ma trận này bằng biểu đồ heatmap để xác định các trường dữ liệu trực quan.
         \begin{figure}[H]
@@ -167,8 +225,11 @@
     \begin{itemize}
         \item Với mỗi 2 trường dữ liệu X, Y trong danh sách các trường dữ liệu xuất hiện trong Table 4, trực quan các điểm dữ liệu thuộc 2 trường đó bằng biểu đồ scatter.
         \item Tiếp đó, tìm một quy luật xấp xỉ phù hợp nhất với dữ liệu quan sát bằng một đường thẳng $\bar{y} = w_0 + xw_1$ với $w_0, w_1$ được tính theo công thức sau
-        $$w_1 = \frac{\overline{XY} - \overline{X}.\overline{Y}}{\overline{X^2}-\overline{X}^2}$$
-        $$w_0 = \overline{Y} - w_1\overline{X}$$
+        \begin{equation}
+            \left\{\begin{matrix}
+                w_1 = \frac{\overline{XY} - \overline{X}.\overline{Y}}{\overline{X^2}-\overline{X}^2}\\w_0 = \overline{Y} - w_1\overline{X}
+            \end{matrix}\right.
+        \end{equation}
 
         \item Lý do sử dụng biểu đồ scatter kết hợp biểu diễn quy luật bằng một đường tuyến tính: Sử dụng biểu đồ scatter để trực quan giúp người đọc dễ dàng nhận ra một sự xấp xỉ tuyến tính (nếu có) tồn tại giữa 2 biến dữ liệu. Cộng thêm việc biểu diễn quy luật bằng một đường tuyến tính, người đọc có thể thấy rõ được "chất lượng" của đường tuyến tính này trong việc giải thích mối quan hệ giữa 2 trường dữ liệu.
 
@@ -182,7 +243,7 @@
 
         \item Nhận xét dữ liệu
         \begin{itemize}
-            \item Với 5 cặp biến (Độc lập - Phụ thuộc) là \textbf{(Total Case, Total Deaths), (Total Case, Total Recovered), (Total Case, Total Tests), (Total Deaths, Total Recovered), (Total Recovered, Total Tests)}, ta có các kết luận sau
+            \item Với 5 cặp biến (Độc lập - Phụ thuộc): \textbf{(Total Case, Total Deaths), (Total Case, Total Recovered), (Total Case, Total Tests), (Total Deaths, Total Recovered), (Total Recovered, Total Tests)}, ta có các kết luận sau
             \begin{itemize}
                 \item Chỉ số p-value của các cặp biến này rất nhỏ (trong khoảng [$10^{-180}, 10^{-68}$]). Do đó, các biến độc lập nêu trên có ý nghĩa về mặt thống kê.
                 \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value trong khoảng [$10^{-180}, 10^{-68}$]).
@@ -191,61 +252,143 @@
             \end{itemize}
 
             \item Với các cặp biến còn lại, chỉ số $R_{adj}^2 < 75\%$. Do đó, việc giải thích sự thay đổi của biến phụ thuộc dựa trên biến độc lập là không đủ tin cậy.
-            % \item \textbf{(Total Case, Total Deaths)}
-            % \begin{itemize}
-            %     \item Biến Total Case có ý nghĩa đối với mô hình về mặt thống kê (p-value = 3.27e-113) 
-            %     \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 3.27e-113) 
-            %     \item Biến Total Case có thể giải thích được 90.52\% sự thay đổi của biến Total Deaths 
-            %     \item Phương trình hồi quy: $Total Deaths = 1656.22 + Total Case \times 0.018922$ 
-            % \end{itemize}
-
-            % \item \textbf{(Total Case, Total Recovered)}
-            % \begin{itemize}
-            %     \item Biến Total Case có ý nghĩa đối với mô hình về mặt thống kê (p-value = 7.72e-72)
-            %     \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 7.72e-72)
-            %     \item Biến Total Case có thể giải thích được 77.20\% sự thay đổi của biến Total Tests
-            %     \item Phương trình hồi quy: $Total Recovered = 6854.67 + Total Case \times 0.793753$
-            % \end{itemize}
-
-            % \item \textbf{(Total Case, Total Tests)}
-            % \begin{itemize}
-            %     \item Biến Total Case có ý nghĩa đối với mô hình về mặt thống kê (p-value = 7.72e-72)
-            %     \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 7.72e-72)
-            %     \item Biến Total Case có thể giải thích được 77.20\% sự thay đổi của biến Total Tests
-            %     \item Phương trình hồi quy: $Total Tests = 1193995.22 + Total Case \times 12.685115$
-            % \end{itemize}
-
-            % \item \textbf{(Total Deaths, Total Recovered)}
-            % \begin{itemize}
-            %     \item Biến Total Deaths có ý nghĩa đối với mô hình về mặt thống kê (p-value = 1.53e-106)
-            %     \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 1.53e-106)
-            %     \item Biến Total Deaths có thể giải thích được 89.08\% sự thay đổi của biến Total Recovered
-            %     \item Phương trình hồi quy: $Total Recovered = -10871.48 + Total Deaths \times 38.122409$
-            % \end{itemize}
-
-            % \item \textbf{(Total Recovered, Total Tests)}
-            % \begin{itemize}
-            %     \item Biến Total Recovered có ý nghĩa đối với mô hình về mặt thống kê (p-value = 4.48e-68)
-            %     \item Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 4.48e-68)
-            %     \item Biến Total Recovered có thể giải thích được 75.31\% sự thay đổi của biến Total Tests
-            %     \item Phương trình hồi quy: $Total Tests = 1273746.65 + Total Recovered \times 15.606073$
-            % \end{itemize}
-
-            % \item \textbf{(Total Case, Active Cases)}: Biến Total Case không đủ độ tin cậy để giải thích sự thay đổi của biến Active Case (71.75\% < 75\%)
-            % \item \textbf{(Total Case, Critical Cases)}: Biến Total Case không đủ độ tin cậy để giải thích sự thay đổi của biến Critical Cases (65.74\% < 75\%)
-            % \item \textbf{(Total Deaths, Active Cases)}: Biến Total Deaths không đủ độ tin cậy để giải thích sự thay đổi của biến Active Cases (62.11\% < 75\%)
-            % \item \textbf{(Total Deaths, Critical Cases)}: 
-            % \item \textbf{(Total Deaths, Total Tests)}: 
-            % \item \textbf{(Total Recovered, Active Cases)}: 
-            % \item \textbf{(Total Recovered, Critical Cases)}: 
-            % \item \textbf{(Active Cases, Critical Cases)}: 
-            % \item \textbf{(Active Cases, Total Tests)}: 
-            % \item \textbf{(Critical Cases, Total Tests)}: 
         \end{itemize}
     \end{itemize}
 
     \subsection{Biểu diễn quan hệ giữa 3 trường dữ liệu}
 
+    \begin{itemize}
+        \item Với mỗi 3 trường dữ liệu X, Y, Z trong danh sách các trường dữ liệu xuất hiện trong Table 4, sử dụng kỹ thuật hồi quy tuyến tính để xác định một mặt phẳng xấp xỉ các điểm dữ liệu:
+        \begin{equation}
+            w = (X^T X)^{-1}X^Ty \text{, với X là ma trận các biến độc lập, y là biến phụ thuộc}
+        \end{equation}
+        \item Sau đó tính hệ số xác định hiệu chỉnh $R_{adj}^2$, ta xác định được các bộ 3 biến có $R_{adj}^2 > 70\%$ như sau
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|} 
+            \hline
+            \textbf{ STT } & \textbf{ Var1 (độc lập) } & \textbf{ Var2 (độc lập) } & \textbf{ Var3 (phụ thuộc) } & \textbf{$R_{adj}^2$}  \\ \hline
+            1              & Total Case                & Total Deaths              & Total Recovered             & 0.97                \\ \hline
+            2              & Total Case                & Total Deaths              & Active Cases                & 0.71                \\ \hline
+            3              & Total Case                & Total Deaths              & Total Tests                 & 0.80                \\ \hline
+            4              & Total Case                & Total Recovered           & Active Cases                & 0.96                \\ \hline
+            5              & Total Case                & Total Recovered           & Total Tests                 & 0.77                \\ \hline
+            6              & Total Case                & Active Cases              & Total Tests                 & 0.77                \\ \hline
+            7              & Total Case                & Critical Cases            & Total Tests                 & 0.77                \\ \hline
+            8              & Total Deaths              & Total Recovered           & Total Tests                 & 0.76                \\ \hline
+            8              & Total Recovered           & Active Cases              & Total Tests                 & 0.77                \\ \hline
+            10             & Total Recovered           & Critical Cases            & Total Tests                 & 0.75                \\ \hline
+            \end{tabular}
+            \caption{Bảng các bộ 3 thuộc tính có mối tương quan trên 0.7}
+        \end{table}
+
+        \item Sử dụng biểu đồ đường để biểu diễn mối quan hệ giữa 3 biến dữ liệu như sau: Mỗi thuộc tính có một đường biểu diễn riêng. Giá trị này ứng với giá trị trên trục tung. Trục hoành là tên các quốc gia tương ứng.
+        \item Lý do sử dụng biểu đồ đường
+        \begin{itemize}
+            \item Trước hết, chúng ta cần xác định mối quan hệ giữa 3 trường dữ liệu (bao gồm 2 trường độc lập và 1 trường phụ thuộc). Bằng kỹ thuật hồi quy tuyến tính (áp dụng phương trình (3)), giả sử ta tìm ra được hàm số sau:
+            $$Total Recovered = f(Total Cases, Total Deaths) = 4556 + 0.8(Total Cases) + 1.4(Total Deaths)$$
+            \item Lấy đạo hàm riêng của Total Recovered theo các biến độc lập, ta được
+            \begin{itemize}
+                \item $\frac{\partial{\text{ Total Recovered}}}{\partial{\text{ Total Cases}}} = 0.8 > 0$: Total Cases và Total Recovered biến thiên đồng biến. Nghĩa là khi Total Cases tăng thì Total Recovered cũng tăng theo (xét trong trường hợp Total Deaths là hằng số hoặc có biến động nhưng biến động này rất nhỏ so với các biến còn lại).
+                \item $\frac{\partial{\text{ Total Recovered}}}{\partial{\text{ Total Deaths}}} = 1.4 > 0$: Total Deaths và Total Recovered biến thiên đồng biến. Nghĩa là khi Total Deaths tăng thì Total Recovered cũng tăng theo (xét trong trường hợp Total Cases là hằng số hoặc có biến động nhưng biến động này rất nhỏ so với các biến còn lại).
+                \item Ngoài ra, $(\frac{\partial{\text{ Total Recovered}}}{\partial{\text{ Total Deaths}}} = 1.4) > (\frac{\partial{\text{ Total Recovered}}}{\partial{\text{ Total Cases}}} = 0.8)$: Total Recovered phụ thuộc vào Total Deaths nhiều hơn Total Cases.
+            \end{itemize}
+
+            \item Đối chiếu vào biểu đồ: Quan sát các tổng thể biểu đồ, ta thấy
+            \begin{itemize}
+                \item Total Deaths biến động rất nhẹ so với 2 biến còn lại. Do đó, sự thay đổi của biến này không ảnh hưởng nhiều đến Total Recovered.
+                \item Total Cases biến động rất mạnh, và khi nó giảm/tăng thì Total Recovered (biến phụ thuộc) cũng giảm/tăng theo.
+                \item Vậy ta đã biểu diễn được quan hệ biến thiên đồng biến giữa các biến Total Cases và Total Deaths với biến Total Recovered
+            \end{itemize}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.7]{img/lineChart.png}
+                    \caption{Biểu đồ biểu diễn sự mối quan hệ của Total Cases, Total Deaths và Total Recovered}
+                \end{center}
+            \end{figure}
+
+            \item Tóm lại, việc sử dụng biểu đồ đường để thể hiện mối quan hệ tuyến tính giữa các biến dữ liệu được nhóm cho là hợp lý vì đã biểu diễn được sự biến thiên phụ thuộc giữa các biến phụ thuộc và biến độc lập.
+        \end{itemize}
+
+        \item Trực quan các bộ 3 biến
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.39]{img/relationship3Vars.png}
+            \end{center}
+        \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.39]{img/relationship3Vars_1.png}
+                \caption{Biểu đồ biểu diễn mỗi quan hệ giữa 3 biến dữ liệu}
+            \end{center}
+        \end{figure}
+
+        \item Nhận xét dữ liệu: Từ Table 5, ta có thể kết luận rằng Var1 và Var2 có thể giải thích được từ 75\% đến 97\% sự thay đổi của Var3.
+    \end{itemize}
+
     \subsection{Biểu diễn quan hệ giữa 4 trường dữ liệu}
+
+    \begin{itemize}
+        \item Tương tự như biểu diễn quan hệ giữa 3 biến dữ liệu, việc sử dụng biểu đồ đường cho biểu diễn quan hệ 4 biến cũng có thể trực quan được mỗi quan hệ này một cách rõ ràng với cơ sở toán học như đã trình bày ở phần \textit{4.3. Biểu diễn quan hệ giữa 3 trường dữ liệu}
+        \item Các bộ 4 biến được xét tại đây thoả mãn điều kiện $R_{adj}^2 > 0.7$. Ta có bảng thống kê sau
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|} 
+            \hline
+            \textbf{ STT } & \textbf{ Var1 (độc lập) } & \textbf{ Var2 (độc lập) } & \textbf{ Var3 (độc lập) } & \textbf{ Var4 (phụ thuộc) } & \textbf{ $R_{adj}^2$ }  \\ \hline
+            1              & Total Case                & Total Deaths              & Total Recovered           & Active Cases                & 0.96                \\ \hline
+            2              & Total Case                & Total Deaths              & Total Recovered           & Total Tests                 & 0.80                \\ \hline
+            3              & Total Case                & Total Deaths              & Active Cases              & Total Tests                 & 0.80                \\ \hline
+            4              & Total Case                & Total Deaths              & Critical Cases            & Total Tests                 & 0.80                \\ \hline
+            5              & Total Case                & Total Recovered           & Active Cases              & Total Tests                 & 0.77                \\ \hline
+            6              & Total Case                & Total Recovered           & Critical Cases            & Total Tests                 & 0.77                \\ \hline
+            7              & Total Case                & Active Cases              & Critical Cases            & Total Tests                 & 0.77                \\ \hline
+            8              & Total Deaths              & Total Recovered           & Active Cases              & Total Tests                 & 0.79                \\ \hline
+            8              & Total Deaths              & Total Recovered           & Critical Cases            & Total Tests                 & 0.76                \\ \hline
+            10             & Total Recovered           & Active Cases              & Critical Cases            & Total Tests                 & 0.77                \\\hline
+            \end{tabular}
+            \caption{Bảng các bộ 4 thuộc tính có mối tương quan trên 0.7}
+        \end{table}
+
+        \item Trực quan các bộ 4 biến
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.39]{img/relationship3Vars_1.png}
+            \end{center}
+        \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.39]{img/relationship3Vars.png}
+                \caption{Biểu đồ biểu diễn mỗi quan hệ giữa 4 biến dữ liệu}
+            \end{center}
+        \end{figure}
+
+        \item Nhận xét dữ liệu: Từ Table 5, ta có thể kết luận rằng Var1, Var2 và Var3 có thể giải thích được từ 76\% đến 96\% sự thay đổi của Var4.
+        \item Hãy gáy 1 câu gì đó lên đây cho đỡ phí giấy :)) 
+    \end{itemize}
+    \clearpage
+
+    \section{Một vài biểu diễn khác}
+
+    \subsection{Stacked bar chart}
+
+    \begin{itemize}
+        \item Stacked bar chart dùng để biểu diễn một quan hệ 4 biến có sẵn (do \url{https://www.worldometers.info/} cung cấp)
+        \begin{equation}
+            Total cases = Total Deaths + Total Recovered + Total Active
+        \end{equation}
+
+        \item Trực quan
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.25]{img/stackedBar.png}
+            \end{center}
+        \end{figure}
+    \end{itemize}
+
+    \clearpage
+
+    \section{Tham khảo}
+    \clearpage
 
 \end{document}
