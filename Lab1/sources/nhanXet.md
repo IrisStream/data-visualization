@@ -29,10 +29,10 @@
     - Sử dụng **Biểu đồ Scatter** để xác định trong một cặp 2 biến dữ liệu thì ta có thể xác định xem hai biến này có liên quan với nhau không, có liên quan nhiều hay ít và như thế nào.
 
 - Lý do sử dụng **Stacked Bar Chart** (MP)
-    - write something here
+    - Với **Stacked Bar Chart** (Biểu đồ cột chồng) ta có thể dễ dàng thể hiện được sự tương quan giữa dữ liệu tổng và cả các thành phần của tổng chỉ trong một biểu đồ. Mỗi cột trong biểu đồ cột chồng thể hiện một tổng, và mỗi phần trong cột sẽ thể hiện thành phần dữ liệu tạo nên tổng. Biểu đồ cột chồng rất có ích trong việc so sánh, xếp hạng dữ liệu tổng cũng như cho ta biết tỉ lệ của các thành phần tạo nên tổng.
 
 - Lý do sử dụng **World Map**
-    - Sử dụng **World Map** cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt, khác biệt như thế nào giữa các quốc gia. Đồng thời cho ta dễ dàng thấy được những nét tương đồng giữa hai biến dữ liệu giữa các quốc gia, từ đó có thể nhận định được có sự tương quan xảy ra giữa hai biến dữ liệu đang xét không.
+    - Sử dụng **World Map** cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt giữa các quốc gia. Đồng thời cho ta dễ dàng thấy được những nét tương đồng giữa hai biến dữ liệu giữa các quốc gia, từ đó có thể nhận định được có sự tương quan xảy ra giữa hai biến dữ liệu đang xét không.
 
 ## Nhận xét dữ liệu 
 
@@ -69,7 +69,7 @@
 
 
 - Nhận xét dữ liệu **Stacked bar chart** (MP)
-    - write something here
+    -  `Total Case` = `Total Deaths` + `Active Cases` + `Total Recovered`
 
 - Nhận xét dữ liệu **Scatter plot** (Tú)
 
