@@ -13,14 +13,19 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
+
+% for code section
 \usepackage{listings}
+
+% for sub-figure
+\usepackage{subcaption}
 % \usepackage{rotating}
 % \usepackage{tikz}
 
 \captionsetup[table]{skip=5pt}
 \pagestyle{fancy}
 \fancyhead[L]{Trường Đại học Khoa học Tự nhiên - ĐHQG TP.HCM}
-\fancyhead[R]{Nhóm Just $4^{th}$}
+\fancyhead[R]{Nhóm 17}
 
 \begin{document}
     \begin{titlepage}
@@ -54,22 +59,35 @@
     \clearpage
 
     \section{Thông tin nhóm}
-    \begin{enumerate}
-        \item \textbf{Đường link GitHub}: \url{https://github.com/baolongnguyenmac/CinemaManagementSystem}
-        \item \textbf{Danh sách thành viên}
-        \begin{table}[H]
-            \begin{tabular}{|c|c|l|c|c|}
-            \hline
-            STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
-            1   & 18120078 & Ngô Phù Hữu Đại Sơn         & 18120078@student.hcmus.edu.vn & 0919070940 \\ \hline
-            2   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0981850699 \\ \hline
-            3   & 18120227 & Phạm Văn Minh Phương             & 18120227@student.hcmus.edu.vn & 0981850699 \\ \hline
-            4   & 18120253 & Mai Ngọc Tú             & 18120253@student.hcmus.edu.vn & 0981850699 \\ \hline
-            5   & 1712424 & Hàn Văn Gia Hiên            & 1712424@student.hcmus.edu.vn & 0911572108 \\ \hline
-            \end{tabular}
-            \caption{Bảng danh sách thành viên nhóm}
-        \end{table}
-    \end{enumerate}
+    \begin{table}[H]
+        \begin{tabular}{|c|c|l|c|c|}
+        \hline
+        STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
+        1   & 18120078 & Ngô Phù Hữu Đại Sơn         & 18120078@student.hcmus.edu.vn & 0919070940 \\ \hline
+        2   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0981850699 \\ \hline
+        3   & 18120227 & Phạm Văn Minh Phương             & 18120227@student.hcmus.edu.vn & 0981850699 \\ \hline
+        4   & 18120253 & Mai Ngọc Tú             & 18120253@student.hcmus.edu.vn & 0981850699 \\ \hline
+        5   & 1712424 & Hàn Văn Gia Hiên            & 1712424@student.hcmus.edu.vn & 0911572108 \\ \hline
+        \end{tabular}
+        \caption{Bảng danh sách thành viên nhóm}
+    \end{table}
+
+    % \begin{enumerate}
+    %     \item \textbf{Đường link GitHub}: \url{https://github.com/baolongnguyenmac/CinemaManagementSystem}
+    %     \item \textbf{Danh sách thành viên}
+    %     \begin{table}[H]
+    %         \begin{tabular}{|c|c|l|c|c|}
+    %         \hline
+    %         STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
+    %         1   & 18120078 & Ngô Phù Hữu Đại Sơn         & 18120078@student.hcmus.edu.vn & 0919070940 \\ \hline
+    %         2   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0981850699 \\ \hline
+    %         3   & 18120227 & Phạm Văn Minh Phương             & 18120227@student.hcmus.edu.vn & 0981850699 \\ \hline
+    %         4   & 18120253 & Mai Ngọc Tú             & 18120253@student.hcmus.edu.vn & 0981850699 \\ \hline
+    %         5   & 1712424 & Hàn Văn Gia Hiên            & 1712424@student.hcmus.edu.vn & 0911572108 \\ \hline
+    %         \end{tabular}
+    %         \caption{Bảng danh sách thành viên nhóm}
+    %     \end{table}
+    % \end{enumerate}
     \clearpage
 
     \section{Phân tích hoàn thiện yêu cầu}
@@ -375,20 +393,85 @@
     \begin{itemize}
         \item Stacked bar chart dùng để biểu diễn một quan hệ 4 biến có sẵn (do \url{https://www.worldometers.info/} cung cấp)
         \begin{equation}
-            Total cases = Total Deaths + Total Recovered + Total Active
+            Total cases = Total Deaths + Total Recovered + Active Cases
         \end{equation}
 
         \item Trực quan
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=0.25]{img/stackedBar.png}
+                \includegraphics[scale=0.3]{img/stackedBar.png}
+                \caption{Biểu đồ thể hiện quan hệ theo phương trình (4)}
             \end{center}
         \end{figure}
+
+        \item Giải thích biểu đồ: Với mỗi nước được trực quan trên biểu đồ, chiều dài của cả cột chính bằng Total Cases của nước đó. Trong mỗi cột lại phân chia ra nhiều cột nhỏ như đã chú thích trong biểu đồ. Phần Total Deaths và Active Cases được vẽ hướng về phía âm - biểu thị số ca đã chết hoặc đang điều trị. Phần Total Recovered được tô màu xanh và hướng về phía dương - biểu thị số ca đã phục hồi. Ở đây, các nước được sắp xếp theo thứ tự giảm dần Total Cases.
+        \item Lý do sử dụng stacked bar chart: Biểu đồ cột chồng rất có ích trong việc so sánh, xếp hạng dữ liệu tổng cũng như cho ta biết tỉ lệ của các thành phần tạo nên tổng. Trong trường hợp này, nó trực quan được rất rõ tỷ lệ hồi phục và tỷ lệ chết hoặc đang điều trị, thích hợp cho việc so sánh tổng số ca mắc giữa các quốc gia với nhau. 
+    \end{itemize}
+
+    \subsection{World map}
+
+    \begin{itemize}
+        \item Nếu việc trực quan bằng biểu đồ cột chồng là chưa đủ rõ ràng trong việc so sánh số liệu giữa các quốc gia cũng như đối chứng quan hệ giữa các biến dữ liệu thì biểu đồ world map như sắp trình bày dưới đây sẽ phần nào mang lại cảm giác trực quan rõ ràng hơn.
+        \item Việc sử dụng world map cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt giữa các quốc gia. Đồng thời cho ta dễ dàng thấy được những nét tương đồng giữa hai biến dữ liệu giữa các quốc gia, từ đó có thể nhận định được có sự tương quan xảy ra giữa hai biến dữ liệu đang xét không.
+        \item Trực quan
+        \begin{itemize}
+            \item Tương quan giữa Total Cases với Total Deaths và Total Recovered
+            \begin{figure}[H]
+                \begin{subfigure}{.5\textwidth}
+                    \centering
+                    % include first image
+                    \includegraphics[width=1\linewidth]{img/case_death.png}  
+                    \caption{Total cases - Total Deaths}
+    
+                \end{subfigure}
+                \begin{subfigure}{.5\textwidth}
+                    \centering
+                    % include second image
+                    \includegraphics[width=1\linewidth]{img/case_recovered.png}  
+                    \caption{Total cases - Total Recovered}
+    
+                \end{subfigure}
+                \caption{Tương quan giữa Total Cases với Total Deaths và Total Recovered}
+            \end{figure}
+
+            \item Tương quan giữa Total Recovered với Total Deaths và Total Test
+            \begin{figure}[H]
+                \begin{subfigure}{.5\textwidth}
+                    \centering
+                    % include first image
+                    \includegraphics[width=1\linewidth]{img/recovered_death.png}  
+                    \caption{Total Recovered - Total Deaths}
+    
+                \end{subfigure}
+                \begin{subfigure}{.5\textwidth}
+                    \centering
+                    % include second image
+                    \includegraphics[width=1\linewidth]{img/recovered_test.png}  
+                    \caption{Total Recovered - Total Test}
+    
+                \end{subfigure}
+                \caption{Tương quan giữa Total Recovered với Total Deaths và Total Test}
+            \end{figure}
+
+            \item Tương quan giữa Total Cases với Total Test
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.3]{img/test_case.png}
+                    \caption{Tương quan giữa Total Cases với Total Test}
+                \end{center}
+            \end{figure}
+        \end{itemize}
     \end{itemize}
 
     \clearpage
 
     \section{Tham khảo}
+
+    \begin{enumerate}
+        \item Các cơ sở toán học về thống kê và xấp xỉ tuyến tính được tham khảo trong cuốn "Thống kê máy tính tóm tắt" - TS. Bùi Tiến Lên
+        \item Sử dụng framework Crawler: \url{https://gaire-crisna.medium.com/corona-data-scraping-with-scrapy-python-653a78340699}
+    \end{enumerate}
+
     \clearpage
 
 \end{document}
