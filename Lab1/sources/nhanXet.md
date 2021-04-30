@@ -73,103 +73,103 @@
 
 - Nhận xét dữ liệu **Scatter plot** (Tú)
 
-**(Total Case, Total Deaths)**
-    - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 3.27e-113)
-    - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 3.27e-113)
-    - Biến `Total Case` có thể giải thích được 90.52% sự thay đổi của biến `Total Deaths`
-    - Phương trình hồi quy:
-                *Total Deaths* = 1656.22 + *Total Case* * 0.018922
+    - **(Total Case, Total Deaths)**
+        - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 3.27e-113)
+        - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 3.27e-113)
+        - Biến `Total Case` có thể giải thích được 90.52% sự thay đổi của biến `Total Deaths`
+        - Phương trình hồi quy:
+                    *Total Deaths* = 1656.22 + *Total Case* * 0.018922
 
-**(Total Case, Total Recovered)**
-    - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 1.33e-180)
-    - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 1.33e-180)
-    - Biến `Total Case` có thể giải thích được 97.73% sự thay đổi của biến `Total Recovered`
-    - Phương trình hồi quy:
-                *Total Recovered* = 6854.67 + *Total Case* * 0.793753
+    - **(Total Case, Total Recovered)**
+        - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 1.33e-180)
+        - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 1.33e-180)
+        - Biến `Total Case` có thể giải thích được 97.73% sự thay đổi của biến `Total Recovered`
+        - Phương trình hồi quy:
+                    *Total Recovered* = 6854.67 + *Total Case* * 0.793753
 
-**(Total Case, Total Tests)**
-    - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 7.72e-72)
-    - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 7.72e-72)
-    - Biến `Total Case` có thể giải thích được 77.20% sự thay đổi của biến `Total Tests`
-    - Phương trình hồi quy:
-                *Total Tests* = 1193995.22 + *Total Case* * 12.685115
+    - **(Total Case, Total Tests)**
+        - Biến `Total Case` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 7.72e-72)
+        - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 7.72e-72)
+        - Biến `Total Case` có thể giải thích được 77.20% sự thay đổi của biến `Total Tests`
+        - Phương trình hồi quy:
+                    *Total Tests* = 1193995.22 + *Total Case* * 12.685115
 
-**(Total Deaths, Total Recovered)**
-    - Biến `Total Deaths` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 1.53e-106)
-    - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 1.53e-106)
-    - Biến `Total Deaths` có thể giải thích được 89.08% sự thay đổi của biến `Total Recovered`
-    - Phương trình hồi quy:
-                *Total Recovered* = -10871.48 + *Total Deaths* * 38.122409
+    - **(Total Deaths, Total Recovered)**
+        - Biến `Total Deaths` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 1.53e-106)
+        - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 1.53e-106)
+        - Biến `Total Deaths` có thể giải thích được 89.08% sự thay đổi của biến `Total Recovered`
+        - Phương trình hồi quy:
+                    *Total Recovered* = -10871.48 + *Total Deaths* * 38.122409
 
-**(Total Recovered, Total Tests)**
-    - Biến `Total Recovered` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 4.48e-68)
-    - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 4.48e-68)
-    - Biến `Total Recovered` có thể giải thích được 75.31% sự thay đổi của biến `Total Tests`
-    - Phương trình hồi quy:
-                *Total Tests* = 1273746.65 + *Total Recovered* * 15.606073
+    - **(Total Recovered, Total Tests)**
+        - Biến `Total Recovered` có ý nghĩa đối với mô hình về mặt thống kê (p-value = 4.48e-68)
+        - Mô hình phù hợp tốt với dữ liệu quan sát về mặt thống kê (p-value = 4.48e-68)
+        - Biến `Total Recovered` có thể giải thích được 75.31% sự thay đổi của biến `Total Tests`
+        - Phương trình hồi quy:
+                    *Total Tests* = 1273746.65 + *Total Recovered* * 15.606073
 
-**(Total Case, Active Cases)**
-    - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Case` (71.75% < 75%)
+    - **(Total Case, Active Cases)**
+        - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Case` (71.75% < 75%)
 
-**(Total Case, Critical Cases)**
-    - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (65.74% < 75%)
+    - **(Total Case, Critical Cases)**
+        - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (65.74% < 75%)
 
-**(Total Case, Population)**
-    - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (16.19% < 75%)
+    - **(Total Case, Population)**
+        - Biến `Total Case` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (16.19% < 75%)
 
-**(Total Deaths, Active Cases)**
-    - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Cases` (62.11% < 75%)
+    - **(Total Deaths, Active Cases)**
+        - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Cases` (62.11% < 75%)
 
-**(Total Deaths, Critical Cases)**
-    - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (69.78% < 75%)
+    - **(Total Deaths, Critical Cases)**
+        - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (69.78% < 75%)
 
-**(Total Deaths, Total Tests)**
-    - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (61.27% < 75%)
+    - **(Total Deaths, Total Tests)**
+        - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (61.27% < 75%)
 
-**(Total Deaths, Population)**
-    - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (10.92% < 75%)
+    - **(Total Deaths, Population)**
+        - Biến `Total Deaths` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (10.92% < 75%)
 
-**(Total Recovered, Active Cases)**
-    - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Cases` (58.06% < 75%)
+    - **(Total Recovered, Active Cases)**
+        - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Active Cases` (58.06% < 75%)
 
-**(Total Recovered, Critical Cases)**
-    - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (64.40% < 75%)
+    - **(Total Recovered, Critical Cases)**
+        - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (64.40% < 75%)
 
-**(Total Recovered, Population)**
-    - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (18.41% < 75%)
+    - **(Total Recovered, Population)**
+        - Biến `Total Recovered` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (18.41% < 75%)
 
-**(Active Cases, Critical Cases)**
-    - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (45.96% < 75%)
+    - **(Active Cases, Critical Cases)**
+        - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Critical Cases` (45.96% < 75%)
 
-**(Active Cases, Total Tests)**
-    - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (56.94% < 75%)
+    - **(Active Cases, Total Tests)**
+        - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (56.94% < 75%)
 
-**(Active Cases, Population)**
-    - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (5.3% < 75%)
+    - **(Active Cases, Population)**
+        - Biến `Active Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (5.3% < 75%)
 
-**(Critical Cases, Total Tests)**
-    - Biến `Critical Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (44.07% < 75%)
+    - **(Critical Cases, Total Tests)**
+        - Biến `Critical Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Total Tests` (44.07% < 75%)
 
-**(Critical Cases, Population)**
-    - Biến `Critical Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (19.46% < 75%)
+    - **(Critical Cases, Population)**
+        - Biến `Critical Cases` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (19.46% < 75%)
 
-**(Total Tests, Population)**
-    - Biến `Total Tests` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (40.36% < 75%)
+    - **(Total Tests, Population)**
+        - Biến `Total Tests` không đủ độ tin cậy để giải thích sự thay đổi của biến `Population` (40.36% < 75%)
 
 
 - Nhận xét dữ liệu **World Map** (Sơn)
 
-**(Total Case, Total Deaths)**
-    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9052). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+    - **(Total Case, Total Deaths)**
+        - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9052). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
 
-**(Total Case, Total Recovered)**
-    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9773). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+    - **(Total Case, Total Recovered)**
+        - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.9773). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
 
-**(Total Case, Total Tests)**
-    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7721). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+    - **(Total Case, Total Tests)**
+        - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7721). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
 
-**(Total Deaths, Total Recovered)**
-    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.8908). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
-    
-**(Total Tests, Total Recovered)**
-    - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7531). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+    - **(Total Deaths, Total Recovered)**
+        - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.8908). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
+        
+    - **(Total Tests, Total Recovered)**
+        - Phân bố dữ liệu giữa các quốc gia của 2 biến dữ liệu này có nét tương đồng nhau (R^2 = 0.7531). Điều này cho thấy hai biến dữ liệu này có tương quan với nhau
