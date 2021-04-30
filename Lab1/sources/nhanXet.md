@@ -32,7 +32,7 @@
     - write something here
 
 - Lý do sử dụng **World Map**
-    - Sử dụng **World Map** cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt, khác biệt như thế nào giữa các quốc gia. Từ đó dễ dàng xác định được khu vực, quốc gia nào là tâm điểm (dữ liệu lớn nhất) và dự đoán được sự thay đổi của dữ liệu trong tương lai.
+    - Sử dụng **World Map** cho ta thấy được cái nhìn tổng quan của mỗi biến dữ liệu giữa các quốc gia và thấy rõ được sự khác biệt, khác biệt như thế nào giữa các quốc gia. Đồng thời cho ta dễ dàng thấy được những nét tương đồng giữa hai biến dữ liệu giữa các quốc gia, từ đó có thể nhận định được có sự tương quan xảy ra giữa hai biến dữ liệu đang xét không.
 
 ## Nhận xét dữ liệu 
 
