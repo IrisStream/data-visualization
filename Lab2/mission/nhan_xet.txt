@@ -1,0 +1,10 @@
+-Sơn: map, scatter plot 2 biến
+-Tú: treemap, word cloud, bar chart
+-MP: scatter plot 3 biến (3 cái)
+-Hiên: line chart 4 biến, scatter plot 4 biến theo ngày, stacked bar chart
+-BB: Báo cáo.
+
+- Nội dung nhận xét:
+	+ Lợi ích của việc dùng loại biểu đồ (biểu diễn được những ý nghĩa nào)
+	+ Giải thích biểu đồ đang biểu diễn gì? (bao nhiêu biến, biến nào, bằng cách nào)
+	+ Những ý nghĩa được rút ra. (Giải thích?)
