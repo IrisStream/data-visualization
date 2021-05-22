@@ -81,3 +81,17 @@
 - Lợi ích: dễ dàng thấy được tương quan giữa các cặp biến với nhau
 - Biểu diễn: gồm các scatter plot giữa 2 biến trong các biến: Total Cases, Total Deaths, Total Recovered, Active Cases, Serious Cases.
 - Nhận xét: các biến Total Cases, Total Deaths, Total Recovered và Active Cases có các mối tương quan với nhau khá cao (R^2 trên 75%), độ tin cậy cao (P-value nhỏ hơn 0.0001). Trong đó quan hệ giữa tổng số ca mắc và tổng số ca đã phục hồi cho ta thấy rằng những người nhiễm bệnh vẫn còn khả năng để chữa khỏi, mặt khác thì số ca chết cũng cho thấy sự tương quan cao với số ca mắc. Với mỗi ca mắc mới thì sẽ tương đương với khoảng 48 ca chết mới, một con số khá đáng sợ và cần phải cảnh giác, nâng cao ý thức cộng đồng.
+
+## Hiên
+
+### Line Chart New Cases Per Day
+
+- Lợi ích: Line Chart biểu diễn tốt các dữ liệu có tính liên tục, minh họa rõ nét xu hướng thay đổi của các chỉ số theo thời gian, giúp dễ dàng quan sát sự dao động của biến và từ đó đưa ra dự đoán về dữ liệu trong tương lai. Ngoài ra, khi so sánh các tập dữ liệu, Line Chart thể hiện rõ sự chênh lệch và các mốc giao nhau giữa mỗi đường.
+- Biểu đồ gồm 4 biến **New Cases**, **New Deaths**, **New Recovered** và **Serious Critical** được biểu diễn bằng 4 đường trên đồ thị có trục hoành là trục thời gian theo ngày và trục tung thể hiện số ca bệnh.
+- Biểu đồ cho ta thấy được trong 10 ngày từ 14-24/02: số lượng ca bệnh mới, ca hồi phục dao động liên tục nhưng không có xu hướng tăng hay giảm, các ca nguy hiểm dao động mạnh và có dấu hiệu tăng trong vài ngày tiếp theo, số lượng ca tử xong có xu hướng giảm nhẹ; về tương quan giứa số lượng ca bệnh, số lượng ca hồi phục mỗi ngày xấp xỉ ca mắc mới, tỉ lệ ca tử vong thấp.
+
+### Stacked Bar Chart
+
+- Lợi ích: Stacked Bar Chart thể hiện trực quan chỉ số của biến, do đó chung ta có thể dễ dàng so sánh các nhóm dữ liệu với nhau và với cả các dữ liệu trong nhóm đó, từ đó dễ dang đưa ra những nhận định về tỉ lệ các dữ liệu với nhau.
+- Cột **Total Cases** được chia ra thành tổng của các biến **Active Cases**, **Total Deaths** và **Total Recovered** được stacked với nhau. Trục hoành thể hiện số lượng ca bệnh, trục tung thể hiện tên các quốc gia.
+- Biểu đồ thể hiện tự tương quan giữa số lượng ca nhiễm của từng nước với nhau, ta có thể thấy rõ số lượng ca bệnh ở Mỹ nhiều gấp 3-4 lần Brazil và gấp nhiều lần so với các nước châu Âu khác. Ngoài ra, ta có thể thấy tỉ lệ số lượng ca hiện có và các ca đã bình phục, từ đó có thể suy ra được tình hình dịch của những nước đó; VD: India và Brazil đang trong giai đoạn phục hồi, France có thể vừa mới bùng dịch.
