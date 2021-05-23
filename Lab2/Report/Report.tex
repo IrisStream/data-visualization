@@ -299,7 +299,7 @@
 
 \begin{itemize}
     \item Lợi ích: Tree Map cho phép biểu diễn tập dữ liệu được sắp xếp theo thứ bậc. Mục đích là để chia nhỏ tập dữ liệu thành các phần cấu thành nó và nhanh chóng xác định các thành phần lớn hơn và nhỏ hơn của tập dữ liệu
-    \item Biểu đồ cho một cái nhìn trực quan về tập dữ liệu của biến Total Cases, các giá trị của biến Total Cases của các nước thể hiện ít hay nhiều dựa theo kích thước của các hình chữ nhật
+    \item Biểu đồ cho một cái nhìn trực quan về tập dữ liệu của biến Active Cases, các giá trị của biến Active Cases của các nước thể hiện ít hay nhiều dựa theo kích thước của các hình chữ nhật
     \item Dễ dàng nhận thấy USA là nước có tổng số ca Covid nhiều nhất trên thế giới (hình chữ nhật lớn nhất) và tiếp sau đó là các nước India, Brazil, France...
     \begin{figure}[H]
         \begin{center}
@@ -313,11 +313,11 @@
 
 \begin{itemize}
     \item Lợi ích: Tương tự như Tree Map, Word Cloud cho phép người đọc dễ dàng nhận ra xu hướng dựa theo kích thước chữ, chữ càng lớn thì xu hướng càng nhiều, xu hướng nhiều nhất thường được để ở trung tâm của Cloud. Ngoài ra, loại biểu diễn này còn rất sinh động, tạo hứng thú cho người đọc
-    \item Biểu đồ dễ dàng thể hiện được giá trị Total Cases của các nước. Trong đó, giá trị lớn nhất thuộc về USA (kích thước chữ lớn nhất, nằm ở trung tâm). Ngoài ra, ta cũng dễ dàng nhận thấy các nước có giá trị lớn tiếp theo dựa theo kích thước chữ
+    \item Biểu đồ dễ dàng thể hiện được giá trị Total Recovered của các nước. Trong đó, giá trị lớn nhất thuộc về USA (kích thước chữ lớn nhất, nằm ở trung tâm). Ngoài ra, ta cũng dễ dàng nhận thấy các nước có giá trị lớn tiếp theo dựa theo kích thước chữ
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=0.4]{img/cloud.png}
-            \caption{Biểu đồ biểu diễn xếp hạng số lượng ca nhiễm theo từng quốc gia}
+            \caption{Biểu đồ biểu diễn xếp hạng số lượng ca phục hồi theo từng quốc gia}
         \end{center}
     \end{figure}
 \end{itemize}
@@ -327,7 +327,7 @@
 \begin{itemize}
     \item Biểu diễn thông thường
     \begin{itemize}
-        \item Lợi ích: thể hiện trực quan các giá trị và cho thấy sự tăng trưởng hay suy giảm của 1 tập dữ liệu từ đó có được cái nhìn tổng quát về thuộc tính
+        \item Lợi ích: thể hiện trực quan các giá trị và cho thấy sự tương quan so sánh giữa các đối tượng trên 1 tập dữ liệu từ đó có được cái nhìn tổng quát về thuộc tính.
         \item Một lần nữa ta thấy được sự nghiêm trọng của dịch bệnh đối với Mỹ, Brazil và Ấn Độ cũng như sự yếu kém trong phương pháp phòng chống dịch của các nước này, khi mà số ca tử vong của họ đứng đầu thế giới. Riêng đối với Mỹ, số ca tử vong cao hơn gần 50\% so với Brazil và 200\% so với Ấn Độ.
         \begin{figure}[H]
             \begin{center}
@@ -352,7 +352,7 @@
 
 \subsection{Biểu diễn Scatter Plot}
 
-\subsubsection{Corelation matrix}
+\subsubsection{Correlation matrix}
 
 \begin{itemize}
     \item Lợi ích: Dễ dàng thấy được tương quan giữa các cặp biến với nhau
