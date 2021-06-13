@@ -34,7 +34,13 @@ Số liệu cho thấy SAC đang tăng $4. Và công ti cần tốn $16 cho mỗ
 
 Biểu đồ thứ 2 cho ta biết SAC của các loại hợp đồng khác nhau (1, 2, 3 năm). Có thể thấy SAC tăng trong 4 quý gần đây và tăng ở cả 3 loại hợp đồng. Ngoài ra, hợp đồng dài hạn hơn thì có SAC thấp hơn. (Giải thích).
 
+Biểu đồ thứ 3 cho ta biết chi phí cho các sản phẩm ODM của công ty trong 4 quý gần nhất. Nhãn của mỗi cột là số lượng sản phẩm ODM và trục x là số tiền phải chi.
+
+Biểu đồ cuối cho ta thấy ... thấy cl éo giải thích gì hết sao mà thấy
+
 ### ARPU
+
+Số liệu ARPU, tăng $6, và doanh thu trung bình của dịch vụ trả sau theo tháng là $68.
 
 ### Churn rate
 
