@@ -53,3 +53,26 @@ EBIT + Depreciation + Amortization
 ## Original Design Manufacturing (ODM)
 
 ODM là khái niệm để chỉ các công ty, công xưởng đảm nhiệm việc thiết kế, xây dựng các sản phẩm theo yêu cầu. Nếu bạn gặp khó khăn và hạn chế trong việc thiết kế sản phẩm thì các công ty ODM sẽ giúp bạn biến các ý tưởng thành một thiết kế thực sự.
+
+## Hold time
+
+Thời gian mà cuộc gọi của khách hàng được chuyển sang chế đồ chờ trong khi các agent đang tra thông tin hoặc giải quyết các vấn đề của khách hàng
+
+## First Call Resolution
+
+Tỉ lệ số cuộc gọi được giải quyết trong lần gọi đầu tiên.
+
+## Call length
+
+Thời gian trung bình của 1 cuộc gọi chăm sóc khác hàng
+
+## Open ticket
+
+Liên quan đến mô hình **Support Ticket** trong vấn đề chăm sóc khách hàng. Khi một khách hàng có một vấn đề mà không giải quyết được luôn, bạn sẽ chuyển cuộc hội thoại thành Ticket và từ đó chức năng này giúp bạn theo dõi vấn đề một cách dễ dàng.
+
+**Trạng thái ticket**: Trạng thái sẽ cho ta biết được trạng thái xử lý vấn đề. Có 04 trạng thái:
+
+- _Mở (Open)_: là ticket đang được xử lý.
+- _Chờ xử lý (pending)_: là ticket chưa có phương án giải quyết;
+- _Đã giải quyết (Resolved)_ là những ticket đã được xử lý;
+- _Đóng (closed)_ là những ticket đã được đóng và không còn được xử lý nữa, nó có thể là những ticket đã xử lý hoặc không còn được xử lý.
