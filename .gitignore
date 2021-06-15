@@ -17,9 +17,7 @@
 
 # Precompiled Headers
 *.gch
-*.pch
-
-# Linker files
+*.pch # Linker files
 *.ilk
 
 # Debugger Files
@@ -55,3 +53,4 @@
 *.fls
 *.synctex.gz
 *.toc
+*.out
