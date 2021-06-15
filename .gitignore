@@ -48,3 +48,10 @@
 # End of https://www.toptal.com/developers/gitignore/api/c++
 /*/.vscode/
 /ClassExercise2/
+
+*.aux
+*.log
+*.fdb_latexmk
+*.fls
+*.syntctex.gz
+*.toc

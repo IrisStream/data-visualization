@@ -32,11 +32,11 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-        \Large\textbf{Đại học Quốc gia TP. HCM\\Trường Đại học Khoa học Tự nhiên}\\
+        \Large\textbf{Đại học Quốc gia TP. HCM\\Trường Đại học Khoa học Tự nhiên\\Khoa Công nghệ Thông tin}\\
 
         \vfill
         \line(1,0){450}\\[4mm]
-        \LARGE\textbf{\MakeUppercase{Báo cáo Lab 03\\ Trực quan hóa dữ liệu với Tableau}}\\[3mm]
+        \LARGE\textbf{\MakeUppercase{Báo cáo Lab 03\\Trực quan hóa dữ liệu với\\Numpy, Pandas, Matplotlib}}\\[3mm]
         \Large{Trực quan hoá dữ liệu (CSC10108)}\\[3mm]
         \Large{Nhóm 17}
         \line(1,0){430}\\
@@ -64,7 +64,6 @@
         \end{tabular}
         \caption{Bảng danh sách thành viên nhóm}
     \end{table}
-    \clearpage
 
     \section{Phân tích hoàn thiện yêu cầu}
 
@@ -81,7 +80,7 @@
 
     \subsection{Mức độ hoàn thành của thành viên nhóm}
 
-        \begin{table}[]
+        \begin{table}[H]
             \begin{tabular}{|c|l|l|c|}
             \hline
             STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                                                                            & Hoàn thành (\%) \\ \hline
@@ -92,8 +91,29 @@
             5   & Hàn Văn Gia Hiên            & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ câu hỏi 7, 8, 9 phần \\ Exploratory analysis of Car MPG data\\ - Nhận xét biểu đồ\end{tabular}             & 100/100         \\ \hline
             \end{tabular}
         \end{table}
-    \clearpage
-
+\clearpage
+\section{Mô tả các thư viện liên quan}
+\begin{enumerate}
+    \item \textbf{\textit{Matplotlib}}: Thư viện hỗ trợ các công cụ vẽ các biểu đồ trực quan(biểu đồ cột, biểu đồ tròn, biểu đồ đường, Histogram, \dots).
+        \begin{figure}[H]
+            \centering
+                \includegraphics[scale=1]{img/matplotlib}
+                \caption{Một số biểu đồ vẽ bằng thư viện matplotlib}
+        \end{figure}
+    \item \textbf{\textit{Pandas}}: Hỗ trợ các lệnh, hàm và cấu trúc dữ liệu (Dataframe) để tải lên, xử lý và ghi ra các file dữ liệu bản như xls, csv,\dots
+        \begin{figure}[H]
+            \centering
+                \includegraphics[scale=1]{img/pandas_df}
+                \caption{Cấu trúc một Dataframe trong Pandas}
+        \end{figure}
+    \item \textbf{\textit{Numpy}}: Hỗ trợ các hàm và cấu trúc dữ liệu dạng mảng (một hay nhiều chiều)để thực hiện các phép tính tiện lợi hơn so với cấu trúc mảng mặc định của python (các phép tính đại số tuyên tính, các phép cắt mảng, nối mảng,\dots).
+        \begin{figure}[H]
+            \centering
+                \includegraphics[scale=0.2]{img/numpy}
+                \caption{Minh họa mảng 1, 2, 3 chiều trong numpy}
+        \end{figure}
+\end{enumerate}
+\clearpage
 \section{Exploratory analysis of Car MPG data}
 
 \subsection{Trả lời câu hỏi}
@@ -260,6 +280,7 @@
         \begin{itemize}
             \item Các hãng lớn sẽ ra mắt từ 2 - 6 xe mỗi năm, còn các hãng còn lại thì chỉ từ 1 - 2 xe.
             \item Các hãng xe có xu hướng ra mắt giảm dần số lượng dần về những năm cuối thập kỷ và cho ra mắt hàng loạt số lượng xe mới vào nhứng năm đầu của thập kỷ kế tiếp.
+            \item Biểu đồ khá khó nhìn. Nếu có chức năng tương tác để chọn 1 số công ty cụ thể thì sẽ cho kết quả trực quan tốt hơn.
         \end{itemize}
 
     \subsubsection{Tính toán tương quan theo cặp, và vẽ heatmap với Matplotlib. Bạn có thấy tuông quan nào thú vị không?}
@@ -270,7 +291,7 @@
         \end{figure}
         
         \begin{itemize}
-            \item Ta có thể thấy sự tương quan thuận cao giữa các thông số cơ khí với nhau (cylinders, displacement, horsepower, weight), những thông số này đại diện cho phân khúc, công suất của từng chiếc xe
+            \item Ta có thể thấy sự tương quan thuận cao giữa các thông số cơ khí với nhau (cylinders, displacement, horsepower, weight), những thông số này đại diện cho phân khúc, công suất của từng chiếc xe.
             \item Thông số mpg tương quan nghịch cao với các thông số cơ khí trên thể hiện nếu xe càng mạnh, phân khúc càng cao thì sẽ càng tiêu hao nhiên liệu (mpg thấp).
             \item Thông số mpg tương quan thuận với model và origin thể hiện đời xe càng cao thì càng tiết kiệm nhiên liệu.
             \item Thông số acceleration tương quan nghịch với các thông số cơ khí trên thể hiện nếu xe càng to, công suất cao thì khả năng tăng tốc sẽ yếu.
@@ -278,7 +299,8 @@
         
 \clearpage
     
-    \subsection{Story of Electric Power Compsumtion Data}
+\section{Story of Electric Power Compsumtion Data}
+    \subsection{Plot 1}
         \begin{figure}[H]
             \centering
             \includegraphics[scale=0.5]{img/GAP.png}
@@ -286,9 +308,10 @@
         \end{figure}
         
         \begin{itemize}
-            \item Hộ gia đình này sử dụng điện rất liên tục, luôn luôn có thiết bị điện được sử dụng trong nhà. Phần lớn thời gian sử dụng ở mức thấp (bật đèn...)
+            \item Hộ gia đình này sử dụng điện rất liên tục, luôn luôn có thiết bị điện được sử dụng trong nhà. Phần lớn thời gian sử dụng ở mức thấp (bật đèn...).
         \end{itemize}
         
+    \subsection{Plot 2}
         \begin{figure}[H]
             \centering
             \includegraphics[scale=0.3]{img/GAP-hours.png}
@@ -299,6 +322,7 @@
             \item Hộ gia đình này có những khoảng sử dụng điện cao điểm. Cụ thể hơn là vào từ 6h - 12h và 17h-0h.
         \end{itemize}
         
+    \subsection{Plot 3}
         \begin{figure}[H]
             \centering
             \includegraphics[scale=0.3]{img/meterings.png}
@@ -306,9 +330,12 @@
         \end{figure}
         
         \begin{itemize}
-            \item Có thể nhận biết rằng gia đình này đã nấu ăn vào khoảng 8h-10h ngày 01-02. Ở phòng bếp luôn có một chiếc tủ lạnh sử dụng điện theo chu kì theo chu kì 2 tiếng thì sẽ làm lạnh 30p. Máy sưởi và điều hòa được sử dụng khi trời sáng và khi đi ngủ, chỉ không sử dụng vào thời điểm trưa - chiều, khi trời ấm hơn.
+            \item Có thể nhận biết rằng gia đình này đã nấu ăn vào khoảng 8h-10h ngày 01-02 nhưng lại không sử dụng bếp vào thời gian này ngày hôm sau, có thể là họ đã đặt thức ăn bên ngoài. Ngoài ra họ cũng không nấu ăn vào buổi chiều hay ban đêm. 
+            \item Ở phòng bếp luôn có một chiếc tủ lạnh sử dụng điện theo chu kì theo chu kì 2 tiếng thì sẽ làm lạnh 30p. 
+            \item Máy sưởi và điều hòa được sử dụng khi trời sáng và khi đi ngủ(vào 2 khung giờ: 5h30 ~ 12h và 6h ~ 0h), chỉ không sử dụng vào thời điểm trưa - chiều, khi trời ấm hơn. Một điểm bất thường là vào ngày 02-02 họ không dùng điều hòa vào lúc 20h-23h. Có thể lúc đấy gia đình họ đã đi ra ngoài chơi hoặc dự tiệc.
         \end{itemize}
         
+    \subsection{Plot 4}
         \begin{figure}[H]
             \centering
             \includegraphics[scale=0.3]{img/all.png}
@@ -323,16 +350,16 @@
 
 \section{Tham khảo}
 
-    \begin{itemize}
-        \item \url{https://classiccars.fandom.com/wiki/Mazda_RX-7}
-        \item \url{https://classiccars.fandom.com/wiki/Mazda_RX-4}
-        \item \url{https://en.wikipedia.org/wiki/Mazda_RX-7}
-        \item \url{https://en.wikipedia.org/wiki/Mazda_Luce}
-        \item \url{https://en.wikipedia.org/wiki/Mazda_Grand_Familia}
-        \item \url{https://www.mazda.co.uk/why-mazda/news-and-events/mazda-news/articles/2021-50th-anniversary-of-the-mazda-rx-3/}
-        \item \url{https://en.wikipedia.org/wiki/Mazda_Capella#RX-2}
-        \item \url{http://www.turbos.bwauto.com/en/products/turbochargerHistory.aspx}
-        \item \url{https://www.edmunds.com/car-reviews/features/the-history-of-the-mazda-3-a-look-back-through-time.html}
-    \end{itemize}
+\begin{itemize}
+    \item \url{https://classiccars.fandom.com/wiki/Mazda_RX-7}
+    \item \url{https://classiccars.fandom.com/wiki/Mazda_RX-4}
+    \item \url{https://en.wikipedia.org/wiki/Mazda_RX-7}
+    \item \url{https://en.wikipedia.org/wiki/Mazda_Luce}
+    \item \url{https://en.wikipedia.org/wiki/Mazda_Grand_Familia}
+    \item \href{https://www.mazda.co.uk/why-mazda/news-and-events/mazda-news/articles/2021-50th-anniversary-of-the-mazda-rx-3/}{2021: 50TH ANNIVERSARY OF THE MAZDA RX-3}
+    \item \url{https://en.wikipedia.org/wiki/Mazda_Capella#RX-2}
+    \item \url{http://www.turbos.bwauto.com/en/products/turbochargerHistory.aspx}
+    \item \href{https://www.edmunds.com/car-reviews/features/the-history-of-the-mazda-3-a-look-back-through-time.html}{The History of the Mazda 3: A Look Back Through Time}
+\end{itemize}
 
 \end{document}
