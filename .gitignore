@@ -53,5 +53,5 @@
 *.log
 *.fdb_latexmk
 *.fls
-*.syntctex.gz
+*.synctex.gz
 *.toc
