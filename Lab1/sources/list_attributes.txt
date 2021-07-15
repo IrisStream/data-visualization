@@ -1,6 +1,0 @@
-Total Case
-Total Deaths
-Total Recovered
-Active Cases
-Critical Cases
-Total Tests

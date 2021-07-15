@@ -1,2 +1,0 @@
-# data-visualization
-Data Visualization
