@@ -1,0 +1,17 @@
+- Hướng dẫn tableau: (làm theo video) (Tú, Hiên) 
+	+ https://www.youtube.com/watch?v=X0g7GQsPSIA (phần 1)
+	+ https://www.youtube.com/watch?v=X39aTgJyMEE (phần 2)
+- chạy thuật học máy: (Sơn)
+	+ Hồi quy tuyến tính
+	...
+- Đọc lại trong slide, nắm ý để làm: Manipulate View, Facet, Reduce, Embed (ai cũng phải đọc)
+- Tiền xử lý dữ liệu (Sơn)
+- Vẽ lại các biểu đồ trong lab 1 bằng tableau: (Trừ bản đồ đổi thành màu) (Bảo Bảo)
+- Sử dụng các loại biểu đồ trong video hướng dẫn 2. (Sơn)
+- Vẽ hồi quy với tableau (https://www.youtube.com/watch?v=lc76P-C205o) (Sơn)
+- Scatter plot có cái kính lúp (Trang 18 slide lecture 10) (Phương)
+- Scatter plot + kích thước từng điểm + màu từng điểm. (Phương)
+- Ranking Lineup (Trang 9 slide lecture 7) (Sơn)
+- Dashboard, story (Bảo Bảo)
+
+* Deadline: 22h, 20/5
